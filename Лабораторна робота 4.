@@ -1,0 +1,244 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNci35CeVo7llUlMsZsggEP",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/angalap2004/Numerical_methods_of_data_processing/blob/main/%D0%9B%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BD%D0%B0%20%D1%80%D0%BE%D0%B1%D0%BE%D1%82%D0%B0%204.\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Галапчук Андрій Олександрович, 3 варіант, ФІТ 3-2"
+      ],
+      "metadata": {
+        "id": "CoU1qXZdU3au"
+      }
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "891Rzjk7FJHn",
+        "outputId": "02f12690-5b43-45e5-aa54-a307f60d04c4"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Матриця С:\n",
+            "[[0 0 0]\n",
+            " [0 0 0]\n",
+            " [0 0 0]]\n"
+          ]
+        }
+      ],
+      "source": [
+        "import numpy as np\n",
+        "m_sqr_a = np.matrix([[1,1,1],[0,1,1],[0,0,1]])\n",
+        "m_sqr_b =  np.matrix([[7,5,3],[0,7,5],[0,0,7]])\n",
+        "m_sqr_ab = m_sqr_a @ m_sqr_b\n",
+        "m_sqr_ba = m_sqr_b @ m_sqr_a\n",
+        "m_sqr_c = m_sqr_ab - m_sqr_ba\n",
+        "print (\"Матриця С:\")\n",
+        "print (m_sqr_c)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "m_sqr_d = np.matrix ([[5, 0, 0, 0],[0, -2, 0, 0],[0, 0, 3, 0],[0, 0, 0, 2]])\n",
+        "m_sqr_d_power = m_sqr_d ** 2\n",
+        "print(\"Піднесення матриці до степення:\")\n",
+        "print(m_sqr_d_power)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "XwNn2pAvPvEW",
+        "outputId": "8819d803-bb1a-4440-be16-0a9202b03805"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Піднесення матриці до степення:\n",
+            "[[25  0  0  0]\n",
+            " [ 0  4  0  0]\n",
+            " [ 0  0  9  0]\n",
+            " [ 0  0  0  4]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "e = np.array([[1,2,3],[-1,2,1],[1,3,2]])\n",
+        "e_det = np.linalg.det(e)\n",
+        "print(e_det)"
+      ],
+      "metadata": {
+        "id": "Bw_3IaiEfAF9",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "0fe74dc2-751b-453e-b036-37a96189f527"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "-7.999999999999998\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "f = np.array([[2,3,4,1],[1,2,3,4],[3,4,1,2],[4,1,2,3]])\n",
+        "f_det = np.linalg.det(f)\n",
+        "print(f_det)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "LvUJ1-A7Q1I4",
+        "outputId": "532e3e94-edb2-4f93-e9b6-0109761af1c8"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "-160.00000000000009\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "g = np.array([[1,2,2],[2,1,-2],[2,-2,1]])\n",
+        "g_inv = np.linalg.inv(g)\n",
+        "print(g_inv)"
+      ],
+      "metadata": {
+        "id": "kI-09sDzTc7o",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "e0d350d9-45c5-4670-84ed-978bb2d2ca52"
+      },
+      "execution_count": 20,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[ 0.11111111  0.22222222  0.22222222]\n",
+            " [ 0.22222222  0.11111111 -0.22222222]\n",
+            " [ 0.22222222 -0.22222222  0.11111111]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "h = np.array([[1,-1,3,4],[0,-1,2,1],[1,1,-1,2],[2,3,-5,3]])\n",
+        "rank = np.linalg.matrix_rank(h)\n",
+        "print(\"Ранг матриці:\")\n",
+        "print(rank)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "7Rk7viEfVbvQ",
+        "outputId": "82b00d14-e629-4311-b0cb-6d82d2f0bc34"
+      },
+      "execution_count": 21,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Ранг матриці:\n",
+            "3\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "m_sqr_i = np.matrix ([[3,-5,3],[1,2,1],[2,7,-1]])\n",
+        "j = np.array ([[x],[y],[z]])\n",
+        "x,y,z = varibel\n",
+        "k = m_sqr_i*j\n",
+        "k=np.array([[1],[4],[8]])\n",
+        "\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 211
+        },
+        "id": "-cnF6TiVXBs4",
+        "outputId": "f44711fb-01bd-45ce-df0b-f1b470efa08b"
+      },
+      "execution_count": 1,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "NameError",
+          "evalue": "name 'x' is not defined",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mNameError\u001b[0m                                 Traceback (most recent call last)",
+            "\u001b[0;32m/tmp/ipython-input-1472202427.py\u001b[0m in \u001b[0;36m<cell line: 0>\u001b[0;34m()\u001b[0m\n\u001b[1;32m      2\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      3\u001b[0m \u001b[0mm_sqr_i\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mnp\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mmatrix\u001b[0m \u001b[0;34m(\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0;36m3\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m-\u001b[0m\u001b[0;36m5\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;36m3\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0;36m1\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;36m2\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;36m1\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0;36m2\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;36m7\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m-\u001b[0m\u001b[0;36m1\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 4\u001b[0;31m \u001b[0mj\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mnp\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0marray\u001b[0m \u001b[0;34m(\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0mx\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0my\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0mz\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m      5\u001b[0m \u001b[0mx\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0my\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0mz\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mvaribel\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      6\u001b[0m \u001b[0mk\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mm_sqr_i\u001b[0m\u001b[0;34m*\u001b[0m\u001b[0mj\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;31mNameError\u001b[0m: name 'x' is not defined"
+          ]
+        }
+      ]
+    }
+  ]
+}
